@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Sidebar.module.css';
 import {NavLink} from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
     return (
         <div className={styles.sidebar}>
             <nav className={styles.navigaton}>

@@ -1,17 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import Home from './assets/pages/curriculo/portfolio/home/home';
 
 const App: React.FC = () => {
    
   return (
    < BrowserRouter>
    <Layout>
-    <h1>Importação Layout</h1>
-   </Layout>
    <Routes>
      <Route path='/' element={<Home/>}/>
    </Routes>
+   </Layout>
+  
    </BrowserRouter>
    
   )

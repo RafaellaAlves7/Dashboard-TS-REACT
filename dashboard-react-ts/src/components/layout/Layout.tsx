@@ -4,7 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import styles from './Layout.module.css';
-import Layout from '.';
+
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -12,7 +12,7 @@ interface LayoutProps {
 
 
 
-const Layout: React.FC <LayoutProps> = ({children}) => {
+const Layout: React.FC<LayoutProps> = ({children}) => {
     return (
         <div className={styles.container}>
         <Header/>
