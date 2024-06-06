@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Home from './assets/pages/curriculo/portfolio/home/home';
+import Home from './components/pages/Home/Home'
 
 const App: React.FC = () => {
    
@@ -9,7 +9,7 @@ const App: React.FC = () => {
    < BrowserRouter>
    <Layout>
    <Routes>
-     <Route path='/' element={<Home/>}/>
+     { <Route path='/' element={<Home/>}/> }
    </Routes>
    </Layout>
   
