@@ -3,7 +3,8 @@ import React from 'react';
 const CadastrarExperiencia = () => {
     return (
         <div>
-            <h1>Cadastrar Experiencia</h1>
+            <h1>Cadastrar Experiência</h1>
+            
         </div>
     );
 };
