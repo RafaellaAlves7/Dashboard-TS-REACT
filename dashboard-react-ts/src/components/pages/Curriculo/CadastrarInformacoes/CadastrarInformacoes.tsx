@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './CadastrarInformacoes.module.css';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import * as Yup from 'Yup';
 
@@ -26,9 +27,20 @@ const CadastrarInformacoes: React.FC = () => {
         resumo: Yup.string().required('Resumo obrigatório'),
     });
 
+
+    const onSubmit = (values: FormValues, { resetForm } : { resetForm: () => void}) => {
+        //lógica de envio para o backend
+        console.log(values);
+        resetForm();
+        alert('Formulário enviado com sucesso!')
+    };
+
+
     return (
         <div className={styles.formWrapper}>
-            <h1>Cadastrar Informações</h1>
+        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}></Formik>
+
+            <h2 className={styles.title}>Cadastrar Informações</h2>
             <p>Preencha o Fórmulario</p>
 
             <form action="" className={styles.form}>
