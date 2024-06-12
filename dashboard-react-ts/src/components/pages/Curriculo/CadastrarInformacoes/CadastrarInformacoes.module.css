@@ -49,3 +49,24 @@
   width: 100%;
   resize: vertical;
 }
+
+fieldset{
+  border: none;
+}
+
+.button{
+ background-color: #7ab2fc;
+}
+
+.button:hover{
+  background-color: #172E73;
+  color: white;
+  transition-duration: 1s;
+  
+ }
+
+ .errorMsg{
+  text-decoration:underline red;
+  color: red;
+
+ }

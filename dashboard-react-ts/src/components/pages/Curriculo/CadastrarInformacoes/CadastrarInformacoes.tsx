@@ -17,7 +17,7 @@ const CadastrarInformacoes: React.FC = () => {
         foto: '',
         nome: '',
         cargo: '',
-        resumo: ''
+        resumo: '',
     };
 
     const validationSchema = Yup.object().shape({
@@ -28,7 +28,8 @@ const CadastrarInformacoes: React.FC = () => {
     });
 
 
-    const onSubmit = (values: FormValues, { resetForm } : { resetForm: () => void}) => {
+
+    const onSubmit = (values: FormValues, { resetForm }: { resetForm: () => void }) => {
         //lógica de envio para o backend
         console.log(values);
         resetForm();
@@ -38,37 +39,74 @@ const CadastrarInformacoes: React.FC = () => {
 
     return (
         <div className={styles.formWrapper}>
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}></Formik>
 
-            <h2 className={styles.title}>Cadastrar Informações</h2>
-            <p>Preencha o Fórmulario</p>
+            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+                {({ errors, touched}) => (
+                <Form className={styles.form}>
 
-            <form action="" className={styles.form}>
-                <h2 className={styles.title}>Informações Pessoais</h2>
-
-                <div className={styles.formGroup}>
-                    <label htmlFor="foto" className={styles.label}>Foto</label>
-                    <input type="text" id="foto" className={styles.input}/>
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label htmlFor="nome" className={styles.label}>Nome</label>
-                    <input type="text" id="nome" className={styles.input}/>
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label htmlFor="cargo" className={styles.label}>Cargo</label>
-                    <input type="text" id="cargo" className={styles.input}/>
-                </div>
-
-                
-                <div className={styles.formGroup}>
-                    <label htmlFor="resumo" className={styles.label}>Resumo</label>
-                    <textarea name="resumo" id="resumo" className={styles.textarea}/>
-                </div>
+                    <h2 className={styles.title}>Cadastrar Informações</h2>
 
 
-                </form>
+
+                    <h2 className={styles.title}>Informações Pessoais</h2>
+
+
+                    <fieldset className={styles.formGroup}>
+                        <label htmlFor="foto" className={styles.label}>Foto</label>
+                        <Field
+                            type="text"
+                            id="foto"
+                            name="foto" className={styles.input}
+                        />
+                        <ErrorMessage name="foto" component="fieldset" className={styles.errorMsg}/>
+                    </fieldset>
+
+
+
+                    <fieldset className={styles.formGroup}>
+                        <label htmlFor="nome" className={styles.label}>Nome</label>
+                        <Field
+                            type="text"
+                            id="nome"
+                            name="nome" className={styles.input}
+                        />
+                        <ErrorMessage name="nome" component="fieldset" className={styles.errorMsg}/>
+
+                    </fieldset>
+
+
+                    <fieldset className={styles.formGroup}>
+                        <label htmlFor="cargo" className={styles.label}>Cargo</label>
+                        <Field
+                            type="text"
+                            id="cargo"
+                            name="cargo" className={styles.input}
+                        />
+                        <ErrorMessage name="cargo" component="fieldset" className={styles.errorMsg}/>
+
+                    </fieldset>
+
+
+
+                    <fieldset className={styles.formGroup}>
+                        <label htmlFor="resumo" className={styles.label}>Resumo</label>
+
+                        <Field
+                            as="textarea"
+                            id="resumo"
+                            name="resumo" className={styles.textarea}
+                        />
+                        <ErrorMessage name="resumo" component="fieldset" className={styles.errorMsg}/>
+
+
+
+                    </fieldset>
+
+                    <button type="submit" className={styles.button}>Salvar</button>
+
+                </Form>
+                )};
+            </Formik>
         </div>
     );
 };
