@@ -3,6 +3,7 @@ import styles from './CadastrarInformacoes.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import * as Yup from 'Yup';
+import Input from '../../../forms/input';
 
 interface FormValues {
     foto: string;
@@ -41,7 +42,8 @@ const CadastrarInformacoes: React.FC = () => {
         <div className={styles.formWrapper}>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-                {({ errors, touched}) => (
+                {({errors, touched} : any) => (
+
                 <Form className={styles.form}>
 
                     <h2 className={styles.title}>Cadastrar Informações</h2>
@@ -56,10 +58,18 @@ const CadastrarInformacoes: React.FC = () => {
                         <Field
                             type="text"
                             id="foto"
-                            name="foto" className={styles.input}
+                            name="foto" className={`${styles.input} ${touched.foto && errors.foto && styles.error}`}
                         />
                         <ErrorMessage name="foto" component="fieldset" className={styles.errorMsg}/>
                     </fieldset>
+
+                        <Input
+                        label="foto"
+                        name="foto"
+                        errors={errors.foto}
+                        touched={touched.foto}
+                        />
+                       
 
 
 
@@ -68,7 +78,7 @@ const CadastrarInformacoes: React.FC = () => {
                         <Field
                             type="text"
                             id="nome"
-                            name="nome" className={styles.input}
+                            name="nome" className={`${styles.input} ${touched.nome && errors.nome && styles.error}`}
                         />
                         <ErrorMessage name="nome" component="fieldset" className={styles.errorMsg}/>
 
@@ -80,7 +90,7 @@ const CadastrarInformacoes: React.FC = () => {
                         <Field
                             type="text"
                             id="cargo"
-                            name="cargo" className={styles.input}
+                            name="cargo" className={`${styles.input} ${touched.cargo && errors.cargo && styles.error}`}
                         />
                         <ErrorMessage name="cargo" component="fieldset" className={styles.errorMsg}/>
 
@@ -94,7 +104,7 @@ const CadastrarInformacoes: React.FC = () => {
                         <Field
                             as="textarea"
                             id="resumo"
-                            name="resumo" className={styles.textarea}
+                            name="resumo" className={`${styles.input} ${touched.resumo && errors.resumo && styles.error}`}
                         />
                         <ErrorMessage name="resumo" component="fieldset" className={styles.errorMsg}/>
 
@@ -105,7 +115,7 @@ const CadastrarInformacoes: React.FC = () => {
                     <button type="submit" className={styles.button}>Salvar</button>
 
                 </Form>
-                )};
+                )}
             </Formik>
         </div>
     );
