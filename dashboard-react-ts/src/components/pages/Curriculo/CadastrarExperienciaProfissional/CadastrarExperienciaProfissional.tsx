@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CadastrarExperienciaProfissional = () => {
+const CadastrarExperienciaProfissional: React.FC = () => {
     return (
         <div>
             <h1>Cadastrar Experiência Profissional</h1>

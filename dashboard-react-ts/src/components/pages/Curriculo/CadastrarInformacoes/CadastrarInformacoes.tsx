@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import * as Yup from 'Yup';
 import Input from '../../../forms/input';
+import Textarea from '../../../forms/input/textarea/Textarea';
 
 interface FormValues {
     foto: string;
@@ -53,7 +54,7 @@ const CadastrarInformacoes: React.FC = () => {
                     <h2 className={styles.title}>Informações Pessoais</h2>
 
 
-                    <fieldset className={styles.formGroup}>
+                   {/*<fieldset className={styles.formGroup}>
                         <label htmlFor="foto" className={styles.label}>Foto</label>
                         <Field
                             type="text"
@@ -61,10 +62,10 @@ const CadastrarInformacoes: React.FC = () => {
                             name="foto" className={`${styles.input} ${touched.foto && errors.foto && styles.error}`}
                         />
                         <ErrorMessage name="foto" component="fieldset" className={styles.errorMsg}/>
-                    </fieldset>
+                    </fieldset>*/}
 
                         <Input
-                        label="foto"
+                        label="Foto"
                         name="foto"
                         errors={errors.foto}
                         touched={touched.foto}
@@ -73,7 +74,7 @@ const CadastrarInformacoes: React.FC = () => {
 
 
 
-                    <fieldset className={styles.formGroup}>
+                   {/* <fieldset className={styles.formGroup}>
                         <label htmlFor="nome" className={styles.label}>Nome</label>
                         <Field
                             type="text"
@@ -82,10 +83,17 @@ const CadastrarInformacoes: React.FC = () => {
                         />
                         <ErrorMessage name="nome" component="fieldset" className={styles.errorMsg}/>
 
-                    </fieldset>
+                    </fieldset>*/}
+
+                    <Input
+                        label="Nome"
+                        name="nome"
+                        errors={errors.nome}
+                        touched={touched.nome}
+                        />
 
 
-                    <fieldset className={styles.formGroup}>
+                   {/* <fieldset className={styles.formGroup}>
                         <label htmlFor="cargo" className={styles.label}>Cargo</label>
                         <Field
                             type="text"
@@ -94,11 +102,18 @@ const CadastrarInformacoes: React.FC = () => {
                         />
                         <ErrorMessage name="cargo" component="fieldset" className={styles.errorMsg}/>
 
-                    </fieldset>
+                    </fieldset>*/}
+
+                    <Input
+                        label="Cargo"
+                        name="cargo"
+                        errors={errors.cargo}
+                        touched={touched.cargo}
+                        />
 
 
 
-                    <fieldset className={styles.formGroup}>
+                   {/* <fieldset className={styles.formGroup}>
                         <label htmlFor="resumo" className={styles.label}>Resumo</label>
 
                         <Field
@@ -110,7 +125,14 @@ const CadastrarInformacoes: React.FC = () => {
 
 
 
-                    </fieldset>
+                    </fieldset>*/}
+
+                    <Textarea
+                        label="Resumo"
+                        name="name"
+                        errors={errors.resumo}
+                        touched={touched.resumo}
+                        />
 
                     <button type="submit" className={styles.button}>Salvar</button>
 

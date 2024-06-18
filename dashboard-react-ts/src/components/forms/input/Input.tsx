@@ -17,7 +17,7 @@ const Input: React.FC <InputProps> = ({ label, name, type = 'text', errors, touc
         <label htmlFor={name} className={styles.label}>
             {label}:
         </label>
-        <Field type={type} ide={name} name={name} className={`${styles.Input} ${touched && errors && styles.errors}`}/>
+        <Field type={type} id={name} name={name} className={`${styles.Input} ${touched && errors && styles.errors}`}/>
         <ErrorMessage name={name} component="div" className={styles.errorMsg}/>
     </div>
   );

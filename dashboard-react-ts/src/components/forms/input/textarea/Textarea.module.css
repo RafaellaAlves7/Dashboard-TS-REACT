@@ -20,6 +20,15 @@
     background-color: #ffffff;
   }
   
+  .textarea{
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    background-color: #ffffff;
+    height: 10rem;
+    width: 100%;
+    resize: vertical;
+  }
   
    .error{
     border: 2px red;
