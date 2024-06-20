@@ -5,6 +5,7 @@ import Home from './components/pages/Home/Home'
 import CadastrarInformacoes from './components/pages/Curriculo/CadastrarInformacoes';
 import CadastrarExperiencia from './components/pages/Curriculo/CadastrarExperiencia/CadastrarExperiencia';
 import CadastrarExperienciaProfissional from './components/pages/Curriculo/CadastrarExperienciaProfissional/CadastrarExperienciaProfissional';
+import ListaPortfolio from './components/pages/Portfolio';
 
 const App: React.FC = () => {
    
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Route path='/curriculo/informacoes/cadastro' element={<CadastrarInformacoes/>}/> 
       <Route path='/curriculo/experiencia/cadastro' element={<CadastrarExperiencia/>}/> 
       <Route path='/curriculo/experiencia/listar' element={<CadastrarExperienciaProfissional/>}/> 
+      <Route path='/portfolio/listagem' element={<ListaPortfolio/>}/> 
    </Routes>
    </Layout>
   

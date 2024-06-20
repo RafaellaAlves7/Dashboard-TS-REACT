@@ -1,4 +1,13 @@
 import React from 'react';
+import styles from './CadastrarExperiencia.module.css'
+import Textarea from '../../../forms/input/textarea/Textarea';
+import * as Yup from 'Yup';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+
+import Input from '../../../forms/input';
+
+
+
 
 interface FormValues {
     titulo: string;
@@ -13,21 +22,79 @@ const CadastrarExperiencia: React.FC = () => {
     const initialValues: FormValues = {
         titulo: "",
         descricao: "",
-        tipo:"",
+        tipo: "",
         anoInicio: "",
         anoFim: "",
     }
     const validationSchema = Yup.object().shape({
-        foto: Yup.string().required('campo obrigatória'),
-        nome: Yup.string().required('campo obrigatório'),
-        cargo: Yup.string().required('campo obrigatório'),
-        resumo: Yup.string().required('campo obrigatório'),
+        titulo: Yup.string().required('campo obrigatória'),
+        descricao: Yup.string().required('campo obrigatório'),
+        tipo: Yup.string().required('campo obrigatório'),
+        anoInicio: Yup.number().required('campo obrigatório').typeError('Um número é obrigatótio'),
+        anoFim: Yup.string().required('campo obrigatório'),
     });
 
+    const onSubmit = (
+        values: FormValues, { resetForm }: { resetForm: () => void }
+    ) => {
+        //Lógica de envio para backend
+        console.log(values);
+        resetForm();
+        alert("Formulário enviado com sucesso!");
+    };
+
     return (
-        <div>
-            <h1>Cadastrar Experiência</h1>
-            
+        <div className={styles.formWrapper}>
+
+            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+                {({ errors, touched }) => (
+
+                    <Form className={styles.form}>
+
+
+                        <h2 className={styles.title}>Cadastrar Experiência</h2>
+                        <Input
+                            label="Título"
+                            name="titulo"
+                            errors={errors.titulo}
+                            touched={touched.titulo}
+                        />
+
+                        <Input
+                            label="Descrição"
+                            name="descricao"
+                            errors={errors.descricao}
+                            touched={touched.descricao}
+                        />
+
+                        <Input
+                            label="Ano de Início"
+                            name="anoInicio"
+                            errors={errors.anoInicio}
+                            touched={touched.anoInicio}
+                        />
+
+                        <Input
+                            label="Ano de Fim"
+                            name="anoFim"
+                            errors={errors.anoFim}
+                            touched={touched.anoFim}
+                        />
+
+                        <Textarea
+                            label="Descrição"
+                            name="descricao"
+                            errors={errors.descricao}
+                            touched={touched.descricao}
+                        />
+
+
+
+                        <button type="submit" className={styles.button}>Salvar</button>
+
+                    </Form>
+                )}
+            </Formik>
         </div>
     );
 };
