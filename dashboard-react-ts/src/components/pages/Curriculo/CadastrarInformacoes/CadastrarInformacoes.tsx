@@ -43,7 +43,7 @@ const CadastrarInformacoes: React.FC = () => {
         <div className={styles.formWrapper}>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-                {({errors, touched} : any) => (
+                {({errors, touched} ) => (
 
                 <Form className={styles.form}>
 

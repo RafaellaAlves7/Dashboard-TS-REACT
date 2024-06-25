@@ -1,1 +1,1 @@
-export { default} from './listaPortfolio'
+export { default} from './ListaPortfolio'

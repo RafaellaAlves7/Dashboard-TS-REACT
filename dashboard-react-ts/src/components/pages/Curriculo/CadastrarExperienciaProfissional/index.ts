@@ -1,1 +1,1 @@
-export { default } from './CadastrarExperienciaProfissional'
+export { default } from './ListarExperiencia'
