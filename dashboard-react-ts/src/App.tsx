@@ -4,11 +4,13 @@ import Layout from './components/layout/Layout';
 import Home from './components/pages/Home/Home'
 import CadastrarInformacoes from './components/pages/Curriculo/CadastrarInformacoes';
 import CadastrarExperiencia from './components/pages/Curriculo/CadastrarExperiencia/CadastrarExperiencia';
-import ListarExperiencia from './components/pages/Curriculo/ListarExperiencia';
-import ListaPortfolio from './components/pages/Portfolio';
+import ListarExperiencia from './components/pages/Curriculo/CadastrarExperienciaProfissional';
+import ListaPortfolio from './components/pages/Portfolio/ListaPortfolio/ListaPortfolio'
+
 
 const App: React.FC = () => {
    
+  //Sistema de Rota
   return (
    < BrowserRouter>
    <Layout>
