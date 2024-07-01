@@ -20,7 +20,7 @@ const App: React.FC = () => {
       <Route path='/curriculo/informacoes/cadastro' element={<CadastrarInformacoes/>}/> 
       <Route path='/curriculo/experiencia/cadastro' element={<CadastrarExperiencia/>}/> 
       <Route path='/curriculo/experiencia/listar' element={<ListarExperiencia/>}/> 
-      <Route path='/curriculo/portfolio/cadastro' element={<CadastrarPortfolio/>}/> 
+      <Route path='/portfolio/cadastro' element={<CadastrarPortfolio/>}/> 
       <Route path='/portfolio/listagem' element={<ListaPortfolio/>}/> 
    </Routes>
    </Layout>

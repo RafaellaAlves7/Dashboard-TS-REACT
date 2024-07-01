@@ -54,16 +54,7 @@ const CadastrarInformacoes: React.FC = () => {
                     <h2 className={styles.title}>Informações Pessoais</h2>
 
 
-                   {/*<fieldset className={styles.formGroup}>
-                        <label htmlFor="foto" className={styles.label}>Foto</label>
-                        <Field
-                            type="text"
-                            id="foto"
-                            name="foto" className={`${styles.input} ${touched.foto && errors.foto && styles.error}`}
-                        />
-                        <ErrorMessage name="foto" component="fieldset" className={styles.errorMsg}/>
-                    </fieldset>*/}
-
+                  
                         <Input
                         label="Foto"
                         name="foto"
@@ -74,17 +65,7 @@ const CadastrarInformacoes: React.FC = () => {
 
 
 
-                   {/* <fieldset className={styles.formGroup}>
-                        <label htmlFor="nome" className={styles.label}>Nome</label>
-                        <Field
-                            type="text"
-                            id="nome"
-                            name="nome" className={`${styles.input} ${touched.nome && errors.nome && styles.error}`}
-                        />
-                        <ErrorMessage name="nome" component="fieldset" className={styles.errorMsg}/>
-
-                    </fieldset>*/}
-
+                  
                     <Input
                         label="Nome"
                         name="nome"
@@ -93,16 +74,7 @@ const CadastrarInformacoes: React.FC = () => {
                         />
 
 
-                   {/* <fieldset className={styles.formGroup}>
-                        <label htmlFor="cargo" className={styles.label}>Cargo</label>
-                        <Field
-                            type="text"
-                            id="cargo"
-                            name="cargo" className={`${styles.input} ${touched.cargo && errors.cargo && styles.error}`}
-                        />
-                        <ErrorMessage name="cargo" component="fieldset" className={styles.errorMsg}/>
-
-                    </fieldset>*/}
+                  
 
                     <Input
                         label="Cargo"
@@ -112,20 +84,6 @@ const CadastrarInformacoes: React.FC = () => {
                         />
 
 
-
-                   {/* <fieldset className={styles.formGroup}>
-                        <label htmlFor="resumo" className={styles.label}>Resumo</label>
-
-                        <Field
-                            as="textarea"
-                            id="resumo"
-                            name="resumo" className={`${styles.input} ${touched.resumo && errors.resumo && styles.error}`}
-                        />
-                        <ErrorMessage name="resumo" component="fieldset" className={styles.errorMsg}/>
-
-
-
-                    </fieldset>*/}
 
                     <Textarea
                         label="Resumo"
