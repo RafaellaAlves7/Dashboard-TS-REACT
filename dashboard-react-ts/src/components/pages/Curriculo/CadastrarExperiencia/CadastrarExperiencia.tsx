@@ -81,14 +81,27 @@ const CadastrarExperiencia: React.FC = () => {
                             touched={touched.anoFim}
                         />
 
-                        <fieldset className={styles.formGroup}>
+                        <Select 
+                        
+                        label="Tipo de experiência"
+                        name="tipo"
+                        options={[
+                            { value: "profissional", label: "Profissional"},
+                            { value: "academico", label: "Acadêmico"},
+                        ]}
+
+                        errors={errors.tipo}
+                        touched={touched.tipo}
+                        />
+
+                       {/* <fieldset className={styles.formGroup}>
                             <label htmlFor="tipo" className={styles.label}>Tipo : </label> 
                             <select name="tipo" id="tipo" className={styles.input}>
                                 <option value="">Selecione</option>
                                 <option value="profissional">Profissional</option>
                                 <option value="academico">Acadêmico</option>
                             </select>
-                        </fieldset>
+                        </fieldset>*/}
 
                         <Textarea
                             label="Descrição"

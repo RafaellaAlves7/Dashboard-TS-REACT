@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './Select.modules.css';
+
 
 interface Option {
     value: string;
@@ -13,7 +15,7 @@ interface Option {
         touched?: boolean; 
     }
 
-    const Select : React.FC<SelectProps> = ({ label, name, options, errors, touched}) => {
+    const Select : React.FC <SelectProps> = ({ label, name, options, errors, touched}) => {
         const errorStyle = errors && touched ? styles.error : '';
 
         return(
@@ -21,7 +23,18 @@ interface Option {
                 <label htmlFor={name} className={styles.label}>
                     {label}:
                 </label>
-               <select name={name} id={name} className={`${styles.input} ${errorStyle}`}></select>
+               <select name={name} id={name} className={`${styles.input} ${errorStyle}`}>
+                <option value="">Selecione uma opção</option>
+                {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                
+                ))}
+               </select>
+               {errors && touched && <div className={styles.errorMsg }> {errors} </div>}
             </div>
-        )
-    }
+        );
+    };
+
+    export default Select;
