@@ -5,6 +5,7 @@ import * as Yup from 'Yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Input from '../../../forms/input';
+import Select from '../../../forms/input/Select';
 
 
 
@@ -94,14 +95,6 @@ const CadastrarExperiencia: React.FC = () => {
                         touched={touched.tipo}
                         />
 
-                       {/* <fieldset className={styles.formGroup}>
-                            <label htmlFor="tipo" className={styles.label}>Tipo : </label> 
-                            <select name="tipo" id="tipo" className={styles.input}>
-                                <option value="">Selecione</option>
-                                <option value="profissional">Profissional</option>
-                                <option value="academico">Acadêmico</option>
-                            </select>
-                        </fieldset>*/}
 
                         <Textarea
                             label="Descrição"
