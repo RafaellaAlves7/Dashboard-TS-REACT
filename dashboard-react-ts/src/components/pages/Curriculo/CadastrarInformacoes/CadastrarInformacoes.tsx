@@ -5,7 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'Yup';
 import Input from '../../../forms/input';
 import Textarea from '../../../forms/input/textarea/Textarea';
-import { Informacoes, creatInformacoes } from '../../../../Services/informacoesService';
+import { Informacoes, createInformacoes } from '../../../../Services/informacoesService';
+
 
 
 
@@ -28,12 +29,12 @@ const CadastrarInformacoes: React.FC = () => {
 
 
 
-    const onSubmit = (values: Informacoes, { resetForm }: { resetForm: () => void }) => {
+    const onSubmit = async (values: Informacoes, { resetForm }: { resetForm: () => void }) => {
         //lógica de envio para o backend
         try{
-            await creatInformacoes(values);
+            await createInformacoes(values);
             console.log(values);
-           // resetForm();
+            resetForm();
             alert('Formulário enviado com sucesso!')
 
         } catch(error) {

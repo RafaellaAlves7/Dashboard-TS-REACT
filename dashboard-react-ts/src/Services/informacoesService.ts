@@ -9,7 +9,9 @@ export interface Informacoes {
     resumo: string
 }
 
-export async function creatInformacoes(informacoes: Informacoes): Promise<Informacoes> {
+export async function createInformacoes(informacoes: Informacoes): Promise<Informacoes> {
     //post(cadastrar informaçao), put(atualizar ou editar a informaçao)
-    return await api.put<Informacoes>('/informacoes/1', informacoes);
-}
+    const response = await api.put<Informacoes>('/informacoes/1', informacoes);
+    return response.data;
+    
+};
