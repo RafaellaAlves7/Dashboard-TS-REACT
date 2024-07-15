@@ -6,7 +6,7 @@ import * as Yup from 'Yup';
 import Input from '../../../forms/input';
 import Textarea from '../../../forms/input/textarea/Textarea';
 import { Informacoes, createInformacoes, getInformacoes } from '../../../../Services/informacoesService';
-import InformacoesCard from './InformacoesCard/InformacoesCard';
+import InformacoesCard from './InformacoesCard';
 
 
 
