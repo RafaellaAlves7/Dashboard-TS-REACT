@@ -5,7 +5,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'Yup';
 import Input from '../../../forms/input';
 import Textarea from '../../../forms/input/textarea/Textarea';
-import { Informacoes, createInformacoes } from '../../../../Services/informacoesService';
+import { Informacoes, createInformacoes, getInformacoes } from '../../../../Services/informacoesService';
 import InformacoesCard from './InformacoesCard/InformacoesCard';
 
 
