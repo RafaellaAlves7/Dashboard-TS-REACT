@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './CadastrarInformacoes.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 
 import * as Yup from 'Yup';
 import Input from '../../../forms/input';
 import Textarea from '../../../forms/input/textarea/Textarea';
 import { Informacoes, createInformacoes } from '../../../../Services/informacoesService';
+import InformacoesCard from './InformacoesCard/InformacoesCard';
 
 
 
 
 const CadastrarInformacoes: React.FC = () => {
+
+    const [informacoes, setInformacoes] = React.useState<Informacoes>({} as Informacoes);
 
     const initialValues: Informacoes = {
         id: 1,
@@ -27,12 +30,28 @@ const CadastrarInformacoes: React.FC = () => {
         resumo: Yup.string().required('Resumo obrigatório'),
     });
 
+    const fetchInformacao = async ()=> {
+        try{
+            const informacao = await getInformacoes();
+            setInformacoes(informacao);
+        } catch (error) {
+            console.error('Erro ao buscar informações:', error)
+        }
+    };
+
+    useEffect(() => {
+        fetchInformacao();
+    },[]);
+
+    
+
 
 
     const onSubmit = async (values: Informacoes, { resetForm }: { resetForm: () => void }) => {
         //lógica de envio para o backend
         try{
             await createInformacoes(values);
+            setInformacoes(values);
             console.log(values);
             resetForm();
             alert('Formulário enviado com sucesso!')
@@ -104,7 +123,11 @@ const CadastrarInformacoes: React.FC = () => {
                 </Form>
                 )}
             </Formik>
+
+            <InformacoesCard informacoes={informacoes}/>
+
         </div>
+
     );
 };
 
