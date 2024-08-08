@@ -59,6 +59,14 @@ fieldset{
  background-color: #7ab2fc;
 }
 
+.card-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
 .button:hover{
   background-color: #172E73;
   color: white;
@@ -74,4 +82,14 @@ fieldset{
   text-decoration:underline red;
   color: red;
 
+ }
+
+ .deleteButton{
+  background-color: rgb(255, 0, 0);
+  width: 50%;
+  margin: 0 auto;
+ }
+
+ .deleteButton:hover{
+  background-color: rgb(228, 7, 7);
  }

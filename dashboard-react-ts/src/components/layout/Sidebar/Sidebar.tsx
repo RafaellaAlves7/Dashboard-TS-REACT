@@ -46,6 +46,14 @@ const Sidebar: React.FC = () => {
                         </NavLink>
                     </li>
                     </ul>
+                    <ul>
+                    <li>
+                        <NavLink to="/" >
+                            <h3>Logout</h3>
+
+                        </NavLink>
+                    </li>
+                </ul>
             </nav>
         </div>
     );

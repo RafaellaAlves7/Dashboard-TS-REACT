@@ -1,6 +1,16 @@
 
 
 {
+      "usuarios": [
+        {
+          "id": 1,
+          "email": "teste@email.com",
+          "password": "teste@123"
+        }
+      ],
+
+      
+
     "informacoes": [
         {
             "id": 1,
@@ -10,6 +20,49 @@
             "resumo": ""
         }
     ],
-    "experiencias": [],
-    "portfolio": []
+    "experiencias": [
+        {
+            "id": 1,
+            "titulo": "Desenvolvedor de software",
+            "descricao": "",
+            "tipo": "profissional",
+            "anoInicio": "",
+            "anoFim": ""
+        },
+
+        {
+            "id": 1,
+            "titulo": "",
+            "descricao": "",
+            "tipo": "",
+            "anoInicio": "",
+            "anoFim": ""
+        },
+
+        {
+            "id": 1,
+            "titulo": "",
+            "descricao": "",
+            "tipo": "",
+            "anoInicio": "",
+            "anoFim": ""
+        }
+    ],
+    "portfolio": [
+        {
+            "id": 2,
+            "link": "",
+            "image": "",
+            "title": ""
+
+        },
+
+        {
+            "id": 2,
+            "link": "",
+            "image": "",
+            "title": ""
+
+        }
+    ]
 }

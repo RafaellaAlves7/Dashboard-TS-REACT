@@ -20,10 +20,14 @@ interface SelectProps {
 };
 
 
-const Select: React.FC<SelectProps> = ({ name, options, errors, touched }) => {
+const Select: React.FC<SelectProps> = ({ name, options, errors, touched, label }) => {
 
     return (
         <div className={styles.formGroup}>
+            
+                <label htmlFor={name} className={styles.label}>
+                    {label}:
+                </label>
             <Field
                 as="select"
                 name={name}
@@ -76,7 +80,7 @@ const Select: React.FC<SelectProps> = ({ name, options, errors, touched }) => {
                </select>
                {errors && touched && <div className={styles.errorMsg }> {errors} </div>}
             </div>
-        );
-    */}
+        );*/}
+    
 
     export default Select;
